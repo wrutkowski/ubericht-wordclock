@@ -4,44 +4,6 @@
 # Raphael Hanneken (behoernchen.github.io) code used from Time Words widget
 #
 
-
-#
-# Adjust the styles as you like
-#
-style =
-  # Define the maximum width of the widget.
-  width: "45%"
-
-  # Define the position, where to display the time.
-  # Set properties you don't need to "auto"
-  position:
-    top:    "auto"
-    bottom: "33%"
-    left:   "20px"
-    right:  "auto"
-
-
-  # Font properties
-  font:                 "'Andale Mono', sans-serif"
-  font_color:           "rgba(145, 145, 145, .8)"
-  font_color_active:    "rgba(245, 245, 245, 1)"
-  font_size:            "2vw"
-  font_weight:          "50"
-  letter_spacing:       "0.035em"
-  line_height:          "1.1em"
-
-  # Text shadow
-  text_shadow:
-    blur:           "0px"
-    x_offset:       "1px"
-    y_offset:       "1px"
-    color:          "rgba(0, 0, 0, .1)"
-    color_active:   "rgba(105, 105, 105, .4)"
-
-  # Misc
-  text_transform: "uppercase"
-
-
 # Get the current hour as word.
 command: ""
 
@@ -109,25 +71,25 @@ update: (output, dom) ->
   hour_str = hours[hour]
   $(dom).find("#h_#{hour_str}").addClass("active")
 
+
 style: """
-  top: #{@style.position.top}
-  bottom: #{@style.position.bottom}
-  right: #{@style.position.right}
-  left: #{@style.position.left}
-  width: #{@style.width}
-  font-family: #{@style.font}
-  color: #{@style.font_color}
-  font-weight: #{@style.font_weight}
-  text-align: left
+  top: auto
+  bottom: 12%
+  right: 4%
+  left: auto
+  width: 45%
+  font-family: 'Andale Mono', sans-serif
+  color: rgba(145, 145, 145, .2)
+  font-weight: 50
+  text-align: right
   text-transform: uppercase
-  font-size: #{@style.font_size}
-  letter-spacing: #{@style.letter_spacing}
+  letter-spacing: 0.025em
   font-smoothing: antialiased
-  line-height: #{@style.line_height}
-  text-shadow: #{@style.text_shadow.x_offset} #{@style.text_shadow.y_offset} #{@style.text_shadow.blur} #{@style.text_shadow.color}
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .4)
+  line-height: .9em
+  font-size: 2.5vw
 
   .active
-    color: #{@style.font_color_active}
-    text-shadow: #{@style.text_shadow.x_offset} #{@style.text_shadow.y_offset} #{@style.text_shadow.blur} #{@style.text_shadow.color_active}
-
+    color: rgba(249, 239, 233, 1)
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, .9)
 """
